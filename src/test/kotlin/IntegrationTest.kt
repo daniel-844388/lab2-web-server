@@ -13,7 +13,11 @@ import org.springframework.http.HttpMethod
 import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpEntity
 
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@SpringBootTest(
+    webEnvironment = WebEnvironment.RANDOM_PORT, 
+    properties = ["server.ssl.enabled=false"]
+)
+
 class IntegrationTest {
     @LocalServerPort
     private var port: Int = 0
